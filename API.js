@@ -35,3 +35,19 @@ export const fetchGenres = async () => {
     throw error;
   }
 };
+
+export const fetchMoviesByName = async (query) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/search/movie`, {
+      params: {
+        api_key: API_KEY,
+        query: query,
+        language: 'pt-BR' // Para resultados em português, ajuste conforme necessário
+      }
+    });
+    return response.data.results; // Dados retornados estão em 'results'
+  } catch (error) {
+    console.error('Erro ao buscar filmes:', error);
+    throw error;
+  }
+};

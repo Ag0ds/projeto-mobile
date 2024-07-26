@@ -90,6 +90,6 @@ const styles = StyleSheet.create({
   },
   tabsContainer: {
     flex: 1,
-    marginTop: 60,
+    marginTop: 0,
   },
 });
